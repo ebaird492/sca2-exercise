@@ -4,7 +4,7 @@
 const arr = [0, 1, 2, 3, 4]
 
 const triple = el => {
-  // TODO: Triple the value inputted
+  return el * 3
 }
 
 // Challenge: Implement the map method below!

@@ -20,6 +20,62 @@ const factorial = function(num) {
 const announceDate = function() {
   // TODO - write a function which returns the current date in the following format:
   // "Today's date is January 7th, 2016. It is eleven thirty-seven in the morning."
+  let curDate = new Date()
+  let curDay = curDate.getUTCDate()
+  let curMonth = curDate.getUTCMonth() + 1
+  let curYear = curDate.getUTCFullYear()
+  let curHours = curDate.getUTCHours()
+  let curMinutes = curDate.getUTCMinutes()
+  let stringDay = "" + curDay
+  let stringMonth = ""
+  let stringMinutes = "" + curMinutes
+  let stringHours = ""
+
+  if (curMinutes < 10)
+    stringMinutes = "0" + stringMinutes
+  
+  if (curHours < 11)
+    stringHours = "morning"
+  else if (curHours < 18)
+    stringHours = "afternoon"
+  else
+    stringHours = "night"
+
+  if (curDay == 1 || curDay == 21 || curDay == 31)
+    stringDay += "st"
+  else if (curDay == 2 || curDay == 22)
+    stringDay += "nd"
+  else if (curDay == 3 || curDay == 23)
+    stringDay += "rd"
+  else
+    stringDay += "th"
+
+  if (curMonth == 1)
+    stringMonth = "January"
+  else if (curMonth == 2)
+    stringMonth = "February"
+  else if (curMonth == 3)
+    stringMonth = "March"
+  else if (curMonth == 4)
+    stringMonth = "April"
+  else if (curMonth == 5)
+    stringMonth = "May"
+  else if (curMonth == 6)
+    stringMonth = "June"
+  else if (curMonth == 7)
+    stringMonth = "July"
+  else if (curMonth == 8)
+    stringMonth = "August"
+  else if (curMonth == 9)
+    stringMonth = "September"
+  else if (curMonth == 10)
+    stringMonth = "October"
+  else if (curMonth == 11)
+    stringMonth = "November"
+  else
+    stringMonth = "December"
+  
+  return `Today's date is ${stringMonth} ${stringDay}, ${curYear}. It is ${curHours%12}:${stringMinutes} in the ${stringHours}.`
 }
 
 const shiftRight = function(str, num) {

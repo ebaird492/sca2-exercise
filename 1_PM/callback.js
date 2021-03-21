@@ -14,11 +14,14 @@ const getUser = callback => {
     lastName: "Doe",
     guess: Math.round(Math.random())
   }
-  // TODO: Run the callback function here with the appropriate parameters
+  coinToss(user.guess, handleWin)
 }
 
 const handleWin = didWin => {
-  // TODO
+  if (didWin == true)
+    console.log("You guessed correctly!")
+  else
+    console.log("You did not guess correctly.")
 }
 
-// TODO: run getUser
+getUser(coinToss)
